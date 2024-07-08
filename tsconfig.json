@@ -2,6 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": [
+      "ES2023.Array",
+      "ESNext.Array",
       "dom",
       "dom.iterable",
       "esnext"
@@ -18,7 +20,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
   },
   "include": [
     "src"

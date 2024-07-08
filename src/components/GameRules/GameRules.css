@@ -1,0 +1,8 @@
+.game-rules-container{ 
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  margin: 30px auto 20px;
+  padding: 5px;
+  width:fit-content;
+}
+.game-rules-container h3{  text-align: center; margin:0; }

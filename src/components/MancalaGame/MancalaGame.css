@@ -1,0 +1,122 @@
+.Mancala-Container {
+  text-align: center;
+}
+
+.boardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: fit-content;
+  background-color: brown;
+  background-image: url("./../../../public/asserts/textured_bg.webp");
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: 700;
+}
+
+.game-pits {
+  display: flex;
+  flex-direction: column;
+}
+
+.pits-player-1,
+.pits-player-2 {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.pits-player-1 {
+  flex-direction: row-reverse;
+}
+
+.mancala-player-1,
+.mancala-player-2 {
+  border: 1px solid whitesmoke;
+  box-shadow: inset 0px 0px 15px 10px whitesmoke;
+  border-radius: 50%;
+  height: 240px;
+  width: 120px;
+  margin: 4px;
+  text-align: center;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+
+  .stones-container {
+    padding: 5px 15px;
+  }
+}
+
+.pit {
+  border: 1px solid whitesmoke;
+  box-shadow: inset 0px 0px 10px 10px whitesmoke;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.pit:not(.disabled) {
+  cursor: pointer;
+  background: #04AA6D;
+}
+
+.pit.disabled {
+  background: none;
+}
+
+.stones-text {
+  margin: 0;
+  font-size: 20px;
+}
+
+.stones-container {
+  font-size: 18px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: center;
+  height: 80%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.big-conatiner {
+  font-size: 14px;
+}
+
+.reset-button-container {
+  text-align: end;
+  margin: 0 20px;
+}
+
+.icon {
+  opacity: 0;
+  animation: stones-falling-animation .5s ease-in-out forwards;
+}
+
+@keyframes stones-falling-animation {
+  from {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

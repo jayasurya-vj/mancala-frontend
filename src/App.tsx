@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import './App.css';
+import GameRules from './components/GameRules/GameRules';
+import MancalaGame from './components/MancalaGame/MancalaGame';
+import Notify from './components/GameNotification/GameNotification';
+
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <header className="header">
+        <h1 data-testid="app-header">Mancala Game</h1>
       </header>
-    </div>
+      <main>
+        <Notify></Notify>
+        <MancalaGame></MancalaGame>
+        <GameRules></GameRules>
+      </main>
+    </>
   );
 }
 
