@@ -26,19 +26,19 @@
   flex-direction: column;
 }
 
-.pits-player-1,
-.pits-player-2 {
+.pits-player-A,
+.pits-player-B {
   display: flex;
   flex-direction: row;
 
 }
 
-.pits-player-1 {
+.pits-player-A {
   flex-direction: row-reverse;
 }
 
-.mancala-player-1,
-.mancala-player-2 {
+.mancala-player-A,
+.mancala-player-B {
   border: 1px solid whitesmoke;
   box-shadow: inset 0px 0px 15px 10px whitesmoke;
   border-radius: 50%;

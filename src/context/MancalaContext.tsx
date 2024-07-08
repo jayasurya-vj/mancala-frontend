@@ -18,8 +18,7 @@ let mancalaContextInitial = {
     sessionPlayer: null,
     notification: null,
     sendStartGameMessage: () => { },
-    sendInProgressGameMessage: () => { },
-    setMultiScreen: () => { }
+    sendInProgressGameMessage: () => { }
 }
 
 export const MancalaContext = createContext<MancalaContextProps>(mancalaContextInitial);
@@ -28,10 +27,10 @@ export const MancalaProvider: React.FC<MancalaProviderProps> = ({
     children
 }) => {
 
-    let searchParams = new URLSearchParams(document.location.search);
-
+    
+    let wsUrl = "ws://192.168.178.149:8080/mancala";
     const { sendJsonMessage, lastJsonMessage, readyState } = useWebSocket<MancalaServerMsg>(
-        "ws://192.168.178.149:8080/mancala", {
+        wsUrl, {
         onOpen: () => console.log('WebSocket connection opened!'),
         onClose: () => console.log('WebSocket connection closed!'),
         onError: (event) => console.error('WebSocket error:', event),
@@ -47,6 +46,7 @@ export const MancalaProvider: React.FC<MancalaProviderProps> = ({
     const [multiScreen, setMultiScreen] = useState(false);
     const [notification, setNotification] = useState<string | null>("");
 
+    const searchParams = new URLSearchParams(document.location.search);
     useEffect(() => {
         let gameId = searchParams.get("gameId");
         let sessionPlayer = searchParams.get("sessionPlayer") as Player;
@@ -133,7 +133,6 @@ export const MancalaProvider: React.FC<MancalaProviderProps> = ({
                 currentPlayer,
                 gameStatus,
                 sessionPlayer,
-                setMultiScreen: (val: boolean) => { setMultiScreen(val) }, //remove
                 sendStartGameMessage,
                 sendInProgressGameMessage,
                 notification

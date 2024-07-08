@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import GameRules from './../GameRules/GameRules';
+import GameRules from './GameRules';
 
 describe('GameRules Component', () => {
   test('renders Game Rules heading', () => {

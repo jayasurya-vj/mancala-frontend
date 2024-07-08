@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import App from '../../App';
-import GameRules from '../GameRules/GameRules';
-import MancalaGame from '../MancalaGame/MancalaGame';
-import Notify from '../GameNotification/GameNotification';
+import App from './App';
+import GameRules from './components/GameRules/GameRules';
+import MancalaGame from './components/MancalaGame/MancalaGame';
+import Notify from './components/GameNotification/GameNotification';
 
 jest.mock('./components/GameRules/GameRules');
 jest.mock('./components/MancalaGame/MancalaGame');
-jest.mock('./components/Instruction/Notify');
+jest.mock('./components/GameNotification/GameNotification');
 
 describe('App Component', () => {
   beforeEach(() => {

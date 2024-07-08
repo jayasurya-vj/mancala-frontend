@@ -8,7 +8,6 @@ export interface MancalaContextProps {
    gameStatus: GameStatus|null,
    notification: string|null,
    sendStartGameMessage: (player:Player,multiScreen:boolean) => void,
-   sendInProgressGameMessage: (selectedPitIndex:number) => void,
-   setMultiScreen: (val:boolean)=>void
+   sendInProgressGameMessage: (selectedPitIndex:number) => void
   }
   

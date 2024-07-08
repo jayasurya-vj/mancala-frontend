@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Button, { ButtonProps } from './../Button/Button';
+import Button, { ButtonProps } from './Button';
 
 describe('Button Component', () => {
   const defaultProps: ButtonProps = {
